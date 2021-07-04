@@ -4,7 +4,7 @@ const exphbs  = require('express-handlebars');
 const path = require('path')
 
 const app = express();
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 5000;
 
 app.use(morgan('combined'))
 app.engine('handlebars', exphbs());
@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.get('/', (req, res, next) => {
     res.render('home', {'hello':'123'});
 })
+
 
 app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`);
